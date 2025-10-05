@@ -11,7 +11,7 @@ The data warehouse will be built following the **Medallion Architecture**, which
 - **Silver layer:** This layer performs data transformations such as cleansing and standardization. The load method will be the same as in the bronze layer.  
 - **Gold layer:** Here, data integrations, aggregations, and business logic are applied. The data model (star schema) includes two dimensions (*dim_customers* and *dim_products*) and one fact table (*fact_sales*).
 
-  <img width="1261" height="811" alt="Datawarehouse project" src="https://github.com/user-attachments/assets/b30216e0-7af4-4fce-81cf-91a7d91178f0" />
+<img width="624" height="420" alt="Datawarehouse project" src="https://github.com/user-attachments/assets/5a3c5cad-b1d5-47e7-aa05-27b1223692eb" />
 
 Special thanks to [@DataWithBaraa](https://github.com/DataWithBaraa) for the incredible content and guidance: 
 [![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=9GVqKuTVANE)

@@ -5,10 +5,10 @@ Stored Procedure: Load Bronze Layer
 Script Purpose:
 	- This script creates the stored procedure that loads the data into the 'bronze' schema.
 	- Before uploading the information, the tables will be truncated (load method: truncate & insert).
-	  Otherwise, everythime information is inserted, it will get duplicated.
+	  Otherwise, every time information is inserted, it will be duplicated.
 	- 'BULK INSERT' will be used to load the data from csv files to the 'bronze' tables
-	- The time that the procedure last will be calculated by declaring DATETIME variables.
-	- For error handeling 'BEGIN TRY...END TRY' and 'BEGIN CATCH...END CATCH' will be used.
+	- The time that the procedure lasts will be calculated by declaring DATETIME variables.
+	- For error handling 'BEGIN TRY...END TRY' and 'BEGIN CATCH...END CATCH' will be used.
 		Example:
 		BEGIN TRY
 			-- Code you want to run

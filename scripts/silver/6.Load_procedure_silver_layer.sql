@@ -3,11 +3,11 @@
 Stored Procedure: Load Silver Layer (bronze to silver)
 
 Script Purpose:
-	- This script creates the stored procedure that loads the cleaned and standarized data into the 'bronze' schema (ETL).
+	- This script creates the stored procedure that loads the cleaned and standardized data into the 'bronze' schema (ETL).
 	- Before uploading the information, the tables will be truncated (load method: truncate & insert).
-	  Otherwise, everythime information is inserted, it will get duplicated.
-	- The time that the procedure last will be calculated by declaring DATETIME variables.
-	- For error handeling 'BEGIN TRY...END TRY' and 'BEGIN CATCH...END CATCH' will be used.
+	  Otherwise, every time information is inserted, it will be duplicated.
+	- The time that the procedure lasts will be calculated by declaring DATETIME variables.
+	- For error handling 'BEGIN TRY...END TRY' and 'BEGIN CATCH...END CATCH' will be used.
 		Example:
 		BEGIN TRY
 			-- Code you want to run

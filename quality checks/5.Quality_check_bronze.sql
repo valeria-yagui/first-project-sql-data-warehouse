@@ -188,7 +188,7 @@ Data Quality Check
 		FROM bronze.crm_sales_details
 		WHERE 
 			sls_order_dt <= 0
-			OR LEN(sls_order_dt) <> 8 -- Checking the lenght of the date columns (should have 8 characters)
+			OR LEN(sls_order_dt) <> 8 -- Checking the length of the date columns (should have 8 characters)
 			OR sls_order_dt > 20500101
 			OR sls_order_dt < 19900101;-- For this project, the maxium date should be 01-01-2025 and minimun date should be 01-01-1990
 
@@ -217,7 +217,7 @@ Data Quality Check
 		FROM bronze.crm_sales_details
 		WHERE sls_order_dt > sls_ship_dt OR sls_order_dt > sls_due_dt
  
- 	--> Checking for data inconsistencies among sales, quantity and price.
+ 	--> Checking for data inconsistencies among sales, quantity, and price.
 		--   Expectation: No results
 
 		SELECT 
@@ -236,8 +236,8 @@ Data Quality Check
 
 		-- - Fixing inconsistencies:
 		-- For this project, the following solutions will be applied:
-		-- if the sls_sales is negative, zero or null, it will be calculated multiplying sls_quantity * sls_price
-		-- if the price is zero or null, it will be calculated sls_sales/sls_quantity
+		-- if the sls_sales is negative, zero, or null, it will be calculated by  multiplying sls_quantity * sls_price
+		-- if the price is zero or null, it will be calculated as sls_sales/sls_quantity
 		-- if the price < 0, it will be converted to a positive value.
 		-- Test to fix inconsistencies:
 
@@ -262,7 +262,7 @@ Data Quality Check
 	
 -- ==================================================== ERP_CUST_AZ12 ====================================================
 	--> Checking ids match
-		-- By observing the data, it is cleat that Cid does not match cst_key in the crm_cust_info becuase it has extra chracters at the beginning.
+		-- By observing the data, it is clear that Cid does not match cst_key in the crm_cust_info because it has extra characters at the beginning.
 		-- To fix this CASE... WHEN will be used.
 
 		SELECT
@@ -274,7 +274,7 @@ Data Quality Check
 		FROM bronze.crm_cust_info;
 
 	--> Identifying Out-of-Range Dates
-		-- For this project, when the birhtdate day is older than today's date, the date will be changed to NULL.
+		-- For this project, when the birthdate day is older than today's date, the date will be changed to NULL.
 
 		SELECT
 		bdate
@@ -331,7 +331,7 @@ Data Quality Check
 		WHERE maintenance <> TRIM(maintenance);
 
 	-->> Data Standardization & Consistency
-		-- For this project, the category, subcategory and maintenance will be left the same.
+		-- For this project, the category, subcategory, and maintenance will be left the same.
 
 		SELECT DISTINCT cat
 		FROM bronze.erp_px_cat_g1v2;

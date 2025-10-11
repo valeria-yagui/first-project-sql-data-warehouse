@@ -4,12 +4,12 @@ DDL Script: Create Gold views
 
 Script Purpose:
 	- This script creates the views for the 'gold' layer in the data warehouse.
-	- For every dimension a surrogate key will be created. Surrogates keys are important because business keys
-	 (product_id,customer_id) can change over time in the source system. This is way is safer to use a surrogate key.
+	- For every dimension, a surrogate key will be created. Surrogate keys are important because business keys
+	 (product_id,customer_id) can change over time in the source system.
 	- The data from the 'silver' layer will be used to create this layer.
 	- Data transformations and combinations will be performed to produce clean and ready-for-analysis data.
 	- By joining different tables two dimensions (dim_customer, dim_products) and a fact table (fact_sales) 
-	 will be created (see Integration Model, Data Model and Data Flow graphics).
+	 will be created (see Integration Model, Data Model, and Data Flow graphics).
 ======================================================================================================
 
 */
@@ -61,7 +61,7 @@ Script Purpose:
 	FROM silver.crm_prd_info pr
 		LEFT JOIN silver.erp_px_cat_g1v2 px
 		ON pr.cat_id = px.id
-		WHERE prd_end_dt IS NULL;-- We filter where end date is NULL becuase that means that price is still valid today.
+		WHERE prd_end_dt IS NULL;-- We filter where end date is NULL because that means that the price is still valid today.
 	GO
 
 --==================================================== FACT_SALES====================================================
@@ -84,7 +84,7 @@ Script Purpose:
 		ON sl.sls_cust_id = cu.customer_id;
 	GO
 
-	--Verifying the Foreging Key Integriting
+	--Verifying the Foreging Key Integrating
 	-- Expectations: No results
 
 	SELECT *

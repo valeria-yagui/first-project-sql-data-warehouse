@@ -13,6 +13,8 @@ The data warehouse will be built following the **Medallion Architecture**, which
 
 <img width="624" height="420" alt="Datawarehouse project" src="https://github.com/user-attachments/assets/5a3c5cad-b1d5-47e7-aa05-27b1223692eb" />
 
+The goal is to have clean and standardized data ready for analysis.
+
 Special thanks to [@DataWithBaraa](https://github.com/DataWithBaraa) for the incredible content and guidance: 
 [![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=9GVqKuTVANE)
 

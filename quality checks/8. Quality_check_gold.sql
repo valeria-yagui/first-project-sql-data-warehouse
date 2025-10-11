@@ -24,7 +24,7 @@ Data Quality Check
 		ca.gen,
 		loc.cntry
 		FROM  silver.crm_cust_info AS ci
-		LEFT JOIN silver.erp_cust_az12 AS ca --- If inner join is used, lose data might be lost. This is why LEFT JOIN is used with the master table as reference
+		LEFT JOIN silver.erp_cust_az12 AS ca --- If inner join is used, data might be lost. This is why LEFT JOIN is used with the master table as a reference
 		ON ci.cst_key = ca.cid
 		LEFT JOIN silver.erp_loc_a101 AS loc
 		ON ci.cst_key = loc.cid
@@ -43,7 +43,7 @@ Data Quality Check
 		ELSE COALESCE(ca.gen,'n/a') -- If ca.gen has any value, that value will be returned. If not, then 'n/a' will be returned.
 		END AS new_gen
 	FROM  silver.crm_cust_info ci
-		LEFT JOIN silver.erp_cust_az12 ca --- If we use inner join we might lose data. We use the master table as reference.
+		LEFT JOIN silver.erp_cust_az12 ca
 		ON ci.cst_key = ca.cid
 		LEFT JOIN silver.erp_loc_a101 loc
 		ON ci.cst_key = loc.cid
